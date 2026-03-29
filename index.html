@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Sacred Pathways | Yuliya Schreib</title>
+    <meta name="description" content="The Sacred Pathways — pilgrimage, art, and the ancient roads that carry us. By Yuliya Schreib, author of Ordinary Days on an Ancient Road.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --stone: #8A8175;
+            --warm-cream: #F5F0E8;
+            --deep-earth: #3D3229;
+            --path-gold: #C4A265;
+            --sage: #7A8B6F;
+            --soft-clay: #C4A88C;
+            --mist: #E8E2D8;
+            --ink: #2A2420;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            background-color: var(--warm-cream);
+            color: var(--deep-earth);
+            line-height: 1.7;
+            font-weight: 300;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            background: 
+                radial-gradient(ellipse at 30% 20%, rgba(196, 162, 101, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(122, 139, 111, 0.06) 0%, transparent 50%),
+                var(--warm-cream);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238A8175' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 680px;
+        }
+
+        .site-mark {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--stone);
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            animation: fadeUp 1s ease 0.2s forwards;
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            font-weight: 300;
+            line-height: 1.15;
+            color: var(--ink);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+            opacity: 0;
+            animation: fadeUp 1s ease 0.5s forwards;
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: var(--path-gold);
+        }
+
+        .hero-line {
+            width: 60px;
+            height: 1px;
+            background: var(--path-gold);
+            margin: 2rem auto;
+            opacity: 0;
+            animation: fadeUp 1s ease 0.8s forwards;
+        }
+
+        .hero-subtitle {
+            font-family: 'Jost', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 300;
+            color: var(--stone);
+            line-height: 1.8;
+            max-width: 480px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: fadeUp 1s ease 1s forwards;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            animation: fadeUp 1s ease 1.5s forwards;
+        }
+
+        .scroll-hint span {
+            display: block;
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--path-gold), transparent);
+            margin: 0 auto;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 2rem;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            font-weight: 400;
+            line-height: 1.9;
+            color: var(--deep-earth);
+        }
+
+        .about-text + .about-text {
+            margin-top: 1.5rem;
+        }
+
+        /* Book Section */
+        .book {
+            background: var(--mist);
+            padding: 6rem 2rem;
+        }
+
+        .book-inner {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .book-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+            font-weight: 300;
+            font-style: italic;
+            color: var(--ink);
+            margin-bottom: 0.5rem;
+        }
+
+        .book-publisher {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: var(--stone);
+            letter-spacing: 0.05em;
+            margin-bottom: 2rem;
+        }
+
+        .book-description {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 400;
+            line-height: 1.85;
+            color: var(--deep-earth);
+        }
+
+        .book-description + .book-description {
+            margin-top: 1.3rem;
+        }
+
+        /* Pathways Section */
+        .pathways {
+            padding: 6rem 2rem;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .pathway-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .pathway-item {
+            border-left: 2px solid var(--soft-clay);
+            padding-left: 1.5rem;
+        }
+
+        .pathway-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--ink);
+            margin-bottom: 0.3rem;
+        }
+
+        .pathway-region {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--stone);
+            margin-bottom: 0.5rem;
+        }
+
+        .pathway-note {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: var(--deep-earth);
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--deep-earth);
+            color: var(--mist);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-note {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 300;
+            color: var(--stone);
+            letter-spacing: 0.1em;
+        }
+
+        .footer-note a {
+            color: var(--soft-clay);
+            text-decoration: none;
+        }
+
+        .footer-note a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .about, .pathways {
+                padding: 4rem 1.5rem;
+            }
+            .book {
+                padding: 4rem 1.5rem;
+            }
+            .about-text, .book-description {
+                font-size: 1.15rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="site-mark">The Sacred Pathways</div>
+            <h1 class="hero-title">Ordinary days<br>on an <em>ancient road</em></h1>
+            <div class="hero-line"></div>
+            <p class="hero-subtitle">
+                Pilgrimage, art, and the quiet persistence of paths 
+                walked by millions before us — and the ordinary days 
+                that unfold along the way.
+            </p>
+        </div>
+        <div class="scroll-hint">
+            <span></span>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="reveal">
+            <div class="section-label">About</div>
+            <p class="about-text">
+                Yuliya Schreib is an artist and author whose work explores 
+                the intersection of pilgrimage, embodied knowledge, and the 
+                landscapes that shape us. Walking ancient roads — the Via 
+                Francigena, the Camino de Santiago, the Kumano Kodo — she 
+                has found that the path teaches what no book can: that the 
+                body remembers what the mind forgets, and that ordinary days 
+                are where transformation lives.
+            </p>
+            <p class="about-text">
+                She lives between Porto, Portugal, and wherever the next 
+                path leads.
+            </p>
+        </div>
+    </section>
+
+    <section class="book">
+        <div class="book-inner reveal">
+            <div class="section-label">Forthcoming</div>
+            <h2 class="book-title">Ordinary Days on an Ancient Road</h2>
+            <p class="book-publisher">She Writes Press · Simon & Schuster Distribution · Fall 2027</p>
+            <p class="book-description">
+                A memoir of pilgrimage and presence — what happens when you 
+                walk an ancient road not to arrive, but to be changed by the 
+                walking itself. From the limestone paths of southern Europe 
+                to the cedar forests of Japan, this book follows the ordinary 
+                days that accumulate into something sacred.
+            </p>
+            <p class="book-description">
+                More details coming soon.
+            </p>
+        </div>
+    </section>
+
+    <section class="pathways">
+        <div class="reveal">
+            <div class="section-label">Pathways Walked</div>
+            <div class="pathway-list">
+                <div class="pathway-item">
+                    <div class="pathway-name">Via Francigena</div>
+                    <div class="pathway-region">Italy · Switzerland · France · England</div>
+                    <p class="pathway-note">
+                        The medieval pilgrimage route from Canterbury to Rome — 
+                        1,900 kilometers of history written into the landscape.
+                    </p>
+                </div>
+                <div class="pathway-item">
+                    <div class="pathway-name">Camino de Santiago</div>
+                    <div class="pathway-region">Spain · France · Portugal</div>
+                    <p class="pathway-note">
+                        The Way of St. James — a thousand years of footsteps 
+                        converging on Santiago de Compostela.
+                    </p>
+                </div>
+                <div class="pathway-item">
+                    <div class="pathway-name">Kumano Kodo</div>
+                    <div class="pathway-region">Japan</div>
+                    <p class="pathway-note">
+                        The sacred trails of the Kii Peninsula — where Shinto 
+                        and Buddhist traditions meet in moss-covered stone and 
+                        cedar shadow.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-name">Yuliya Schreib</div>
+        <p class="footer-note">
+            A <a href="https://humansidetech.com">HumanSide Technologies</a> project
+        </p>
+    </footer>
+
+    <script>
+        // Scroll reveal
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        reveals.forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
