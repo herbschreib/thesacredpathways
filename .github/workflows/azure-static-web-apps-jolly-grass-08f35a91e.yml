@@ -13,8 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-      ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true   # ← This suppresses the current deprecation error
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true     # Force Node 24 (removes deprecation conflict)
     steps:
       - uses: actions/checkout@v4
         with:
@@ -27,5 +26,5 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "."           # root folder (where index.html and yulia.png live)
-          output_location: ""         # no build step needed for pure static HTML
+          app_location: "."           # root of repo (index.html + yulia.png)
+          output_location: ""         # no build step needed
