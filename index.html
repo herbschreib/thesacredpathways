@@ -19,17 +19,17 @@
             --mist: #E8E2D8;
             --ink: #2A2420;
         }
-
+ 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+ 
         html {
             scroll-behavior: smooth;
         }
-
+ 
         body {
             font-family: 'Jost', sans-serif;
             background-color: var(--warm-cream);
@@ -38,7 +38,7 @@
             font-weight: 300;
             overflow-x: hidden;
         }
-
+ 
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -54,7 +54,7 @@
                 radial-gradient(ellipse at 70% 80%, rgba(122, 139, 111, 0.06) 0%, transparent 50%),
                 var(--warm-cream);
         }
-
+ 
         .hero::before {
             content: '';
             position: absolute;
@@ -65,13 +65,13 @@
             background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238A8175' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             opacity: 0.5;
         }
-
+ 
         .hero-content {
             position: relative;
             z-index: 1;
             max-width: 680px;
         }
-
+ 
         .site-mark {
             font-family: 'Cormorant Garamond', serif;
             font-size: 0.85rem;
@@ -83,7 +83,7 @@
             opacity: 0;
             animation: fadeUp 1s ease 0.2s forwards;
         }
-
+ 
         .hero-title {
             font-family: 'Cormorant Garamond', serif;
             font-size: clamp(2.8rem, 6vw, 4.5rem);
@@ -95,12 +95,12 @@
             opacity: 0;
             animation: fadeUp 1s ease 0.5s forwards;
         }
-
+ 
         .hero-title em {
             font-style: italic;
             color: var(--path-gold);
         }
-
+ 
         .hero-line {
             width: 60px;
             height: 1px;
@@ -109,7 +109,7 @@
             opacity: 0;
             animation: fadeUp 1s ease 0.8s forwards;
         }
-
+ 
         .hero-subtitle {
             font-family: 'Jost', sans-serif;
             font-size: 1.05rem;
@@ -121,7 +121,7 @@
             opacity: 0;
             animation: fadeUp 1s ease 1s forwards;
         }
-
+ 
         .scroll-hint {
             position: absolute;
             bottom: 2.5rem;
@@ -130,7 +130,7 @@
             opacity: 0;
             animation: fadeUp 1s ease 1.5s forwards;
         }
-
+ 
         .scroll-hint span {
             display: block;
             width: 1px;
@@ -139,14 +139,14 @@
             margin: 0 auto;
             animation: pulse 2s ease-in-out infinite;
         }
-
+ 
         /* About Section */
         .about {
             padding: 6rem 2rem;
             max-width: 720px;
             margin: 0 auto;
         }
-
+ 
         .section-label {
             font-family: 'Jost', sans-serif;
             font-size: 0.75rem;
@@ -156,7 +156,21 @@
             color: var(--sage);
             margin-bottom: 1.5rem;
         }
-
+ 
+        .about-portrait-wrapper {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+ 
+        .about-portrait {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--mist);
+            box-shadow: 0 4px 20px rgba(61, 50, 41, 0.1);
+        }
+ 
         .about-text {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.35rem;
@@ -164,22 +178,22 @@
             line-height: 1.9;
             color: var(--deep-earth);
         }
-
+ 
         .about-text + .about-text {
             margin-top: 1.5rem;
         }
-
+ 
         /* Book Section */
         .book {
             background: var(--mist);
             padding: 6rem 2rem;
         }
-
+ 
         .book-inner {
             max-width: 720px;
             margin: 0 auto;
         }
-
+ 
         .book-title {
             font-family: 'Cormorant Garamond', serif;
             font-size: clamp(1.8rem, 4vw, 2.4rem);
@@ -188,7 +202,7 @@
             color: var(--ink);
             margin-bottom: 0.5rem;
         }
-
+ 
         .book-publisher {
             font-family: 'Jost', sans-serif;
             font-size: 0.85rem;
@@ -197,7 +211,7 @@
             letter-spacing: 0.05em;
             margin-bottom: 2rem;
         }
-
+ 
         .book-description {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.2rem;
@@ -205,30 +219,30 @@
             line-height: 1.85;
             color: var(--deep-earth);
         }
-
+ 
         .book-description + .book-description {
             margin-top: 1.3rem;
         }
-
+ 
         /* Pathways Section */
         .pathways {
             padding: 6rem 2rem;
             max-width: 720px;
             margin: 0 auto;
         }
-
+ 
         .pathway-list {
             display: flex;
             flex-direction: column;
             gap: 2.5rem;
             margin-top: 2rem;
         }
-
+ 
         .pathway-item {
             border-left: 2px solid var(--soft-clay);
             padding-left: 1.5rem;
         }
-
+ 
         .pathway-name {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.4rem;
@@ -236,7 +250,7 @@
             color: var(--ink);
             margin-bottom: 0.3rem;
         }
-
+ 
         .pathway-region {
             font-family: 'Jost', sans-serif;
             font-size: 0.8rem;
@@ -246,7 +260,7 @@
             color: var(--stone);
             margin-bottom: 0.5rem;
         }
-
+ 
         .pathway-note {
             font-family: 'Jost', sans-serif;
             font-size: 0.95rem;
@@ -254,7 +268,7 @@
             color: var(--deep-earth);
             line-height: 1.7;
         }
-
+ 
         /* Footer */
         .footer {
             background: var(--deep-earth);
@@ -262,7 +276,7 @@
             padding: 3rem 2rem;
             text-align: center;
         }
-
+ 
         .footer-name {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.1rem;
@@ -270,7 +284,24 @@
             letter-spacing: 0.05em;
             margin-bottom: 0.5rem;
         }
-
+ 
+        .footer-email {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+ 
+        .footer-email a {
+            color: var(--path-gold);
+            text-decoration: none;
+            letter-spacing: 0.03em;
+        }
+ 
+        .footer-email a:hover {
+            text-decoration: underline;
+        }
+ 
         .footer-note {
             font-family: 'Jost', sans-serif;
             font-size: 0.75rem;
@@ -278,16 +309,16 @@
             color: var(--stone);
             letter-spacing: 0.1em;
         }
-
+ 
         .footer-note a {
             color: var(--soft-clay);
             text-decoration: none;
         }
-
+ 
         .footer-note a:hover {
             text-decoration: underline;
         }
-
+ 
         /* Animations */
         @keyframes fadeUp {
             from {
@@ -299,24 +330,24 @@
                 transform: translateY(0);
             }
         }
-
+ 
         @keyframes pulse {
             0%, 100% { opacity: 0.3; }
             50% { opacity: 0.8; }
         }
-
+ 
         /* Scroll reveal */
         .reveal {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
-
+ 
         .reveal.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
+ 
         /* Responsive */
         @media (max-width: 600px) {
             .about, .pathways {
@@ -332,7 +363,7 @@
     </style>
 </head>
 <body>
-
+ 
     <section class="hero">
         <div class="hero-content">
             <div class="site-mark">The Sacred Pathways</div>
@@ -348,10 +379,13 @@
             <span></span>
         </div>
     </section>
-
+ 
     <section class="about">
         <div class="reveal">
             <div class="section-label">About</div>
+            <div class="about-portrait-wrapper">
+                <img src="yulia.png" alt="Yuliya Schreib" class="about-portrait">
+            </div>
             <p class="about-text">
                 Yuliya Schreib is an artist and author whose work explores 
                 the intersection of pilgrimage, embodied knowledge, and the 
@@ -367,7 +401,7 @@
             </p>
         </div>
     </section>
-
+ 
     <section class="book">
         <div class="book-inner reveal">
             <div class="section-label">Forthcoming</div>
@@ -385,7 +419,7 @@
             </p>
         </div>
     </section>
-
+ 
     <section class="pathways">
         <div class="reveal">
             <div class="section-label">Pathways Walked</div>
@@ -418,14 +452,17 @@
             </div>
         </div>
     </section>
-
+ 
     <footer class="footer">
         <div class="footer-name">Yuliya Schreib</div>
+        <p class="footer-email">
+            <a href="mailto:yulia@thesacredpathways.net">yulia@thesacredpathways.net</a>
+        </p>
         <p class="footer-note">
             A <a href="https://humansidetech.com">HumanSide Technologies</a> project
         </p>
     </footer>
-
+ 
     <script>
         // Scroll reveal
         const reveals = document.querySelectorAll('.reveal');
@@ -436,9 +473,9 @@
                 }
             });
         }, { threshold: 0.15 });
-
+ 
         reveals.forEach(el => observer.observe(el));
     </script>
-
+ 
 </body>
 </html>
