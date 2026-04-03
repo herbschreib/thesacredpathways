@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Sacred Pathways | Yuliya Schreib</title>
+    <meta name="description" content="The Sacred Pathways — pilgrimage, art, and the ancient roads that carry us. By Yuliya Schreib, author of Ordinary Days on an Ancient Road.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --tiffany: #81D8D0;
+            --tiffany-light: #A8E6E0;
+            --tiffany-pale: #C5EFEB;
+            --deep-teal: #1A3C3A;
+            --dark-teal: #2A5854;
+            --warm-white: rgba(255, 255, 255, 0.92);
+            --soft-gold: #C9AD6E;
+            --stone: #3D5855;
+            --terracotta: #9E5A42;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            background-color: var(--tiffany);
+            color: var(--deep-teal);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Navigation ── */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.4s, padding 0.4s;
+        }
+        .nav.scrolled {
+            background: rgba(129, 216, 208, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 3rem;
+            box-shadow: 0 1px 0 rgba(26, 60, 58, 0.1);
+        }
+        .nav-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--deep-teal);
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        .nav-links a {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--deep-teal);
+            text-decoration: none;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        .nav-links a:hover { opacity: 1; }
+
+        /* ── Hero ── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 6rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(
+                ellipse at center,
+                rgba(255, 255, 255, 0.15) 0%,
+                rgba(129, 216, 208, 0) 70%
+            );
+            pointer-events: none;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .site-mark {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 0.7rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--dark-teal);
+            margin-bottom: 3rem;
+        }
+        .hero-title {
+            font-weight: 300;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--deep-teal);
+        }
+        .hero-title em {
+            font-style: italic;
+            color: var(--terracotta);
+        }
+        .hero-line {
+            width: 50px;
+            height: 1px;
+            background: var(--soft-gold);
+            margin: 2rem auto;
+        }
+        .hero-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            color: var(--dark-teal);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* ── Portrait ── */
+        .portrait-section {
+            padding: 4rem 2rem 6rem;
+            display: flex;
+            justify-content: center;
+        }
+        .portrait-frame {
+            position: relative;
+            width: 320px;
+        }
+        .portrait-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: grayscale(15%) contrast(1.02);
+        }
+        .portrait-frame::after {
+            content: '';
+            position: absolute;
+            top: 12px; left: 12px; right: -12px; bottom: -12px;
+            border: 1px solid var(--soft-gold);
+            z-index: -1;
+        }
+
+        /* ── Sections ── */
+        .section {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        .section-label {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            margin-bottom: 2rem;
+        }
+        .section h2 {
+            font-weight: 300;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+        }
+        .section p {
+            font-size: 1.15rem;
+            color: var(--deep-teal);
+            opacity: 0.85;
+            margin-bottom: 1.2rem;
+        }
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--soft-gold), transparent);
+            margin: 0 auto;
+        }
+
+        /* ── Book Section ── */
+        .book-details {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            color: var(--dark-teal);
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(26, 60, 58, 0.15);
+        }
+        .book-details span {
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+
+        /* ── Pathways ── */
+        .pathways-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        .pathway-item {
+            padding: 2rem;
+            background: var(--warm-white);
+            border-radius: 2px;
+        }
+        .pathway-name {
+            font-weight: 500;
+            font-size: 1.4rem;
+            margin-bottom: 0.3rem;
+        }
+        .pathway-region {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            margin-bottom: 1rem;
+        }
+        .pathway-note {
+            font-size: 1rem;
+            opacity: 0.8;
+            line-height: 1.7;
+        }
+
+        /* ── Footer ── */
+        .footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 1px solid rgba(26, 60, 58, 0.1);
+        }
+        .footer-name {
+            font-weight: 400;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+        .footer-email a {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            color: var(--terracotta);
+            text-decoration: none;
+        }
+        .footer-email a:hover { text-decoration: underline; }
+        .footer-note {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            color: var(--dark-teal);
+            margin-top: 2rem;
+            opacity: 0.5;
+        }
+        .footer-note a {
+            color: var(--dark-teal);
+            text-decoration: none;
+        }
+
+        /* ── Reveal Animation ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .nav { padding: 1rem 1.5rem; }
+            .nav-links { display: none; }
+            .pathways-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .portrait-frame { width: 260px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav" id="nav">
+        <a href="#" class="nav-logo">The Sacred Pathways</a>
+        <ul class="nav-links">
+            <li><a href="#book">The Book</a></li>
+            <li><a href="#pathways">Pathways</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="site-mark">The Sacred Pathways</div>
+            <h1 class="hero-title">Ordinary Days<br>on an <em>Ancient Road</em></h1>
+            <div class="hero-line"></div>
+            <p class="hero-subtitle">
+                A memoir of pilgrimage, presence, and the quiet 
+                transformation that comes from walking ancient roads.
+            </p>
+        </div>
+    </section>
+
+    <section class="portrait-section reveal">
+        <div class="portrait-frame">
+            <img src="yulia.png" alt="Yuliya Schreib — author, artist, pilgrim" />
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section reveal" id="book">
+        <div class="section-label">The Book</div>
+        <h2>Ordinary Days on an Ancient Road</h2>
+        <p>
+            What happens when you leave the familiar behind and walk 
+            an ancient path — not to escape your life, but to find 
+            your way back to it?
+        </p>
+        <p>
+            <em>Ordinary Days on an Ancient Road</em> is a memoir of 
+            pilgrimage and presence, tracing the journey along sacred 
+            routes where centuries of footsteps have worn the stone 
+            smooth. It is a book about walking, about seeing, and 
+            about the quiet transformation that happens when you 
+            surrender the pace of modern life for the rhythm of 
+            an ancient one.
+        </p>
+        <div class="book-details">
+            <span>She Writes Press · Simon & Schuster distribution</span>
+            <span>Fall 2027</span>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section reveal" id="pathways">
+        <div class="section-label">Pathways Walked</div>
+        <h2>The roads that shaped the writing</h2>
+        <div class="pathways-grid">
+            <div class="pathway-item">
+                <div class="pathway-name">Camino de Santiago</div>
+                <div class="pathway-region">Spain</div>
+                <p class="pathway-note">
+                    The ancient Way of St. James — a thousand years 
+                    of pilgrims walking toward something they cannot 
+                    name until they arrive.
+                </p>
+            </div>
+            <div class="pathway-item">
+                <div class="pathway-name">Kumano Kodo</div>
+                <div class="pathway-region">Japan</div>
+                <p class="pathway-note">
+                    The sacred trails of the Kii Peninsula — where Shinto 
+                    and Buddhist traditions meet in moss-covered stone and 
+                    cedar shadow.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <footer class="footer" id="contact">
+        <div class="footer-name">Yuliya Schreib</div>
+        <p class="footer-email">
+            <a href="mailto:yulia@thesacredpathways.net">yulia@thesacredpathways.net</a>
+        </p>
+        <p class="footer-note">
+            A <a href="https://humansidetech.com">HumanSide Technologies</a> project
+        </p>
+    </footer>
+
+    <script>
+        // Scroll reveal
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        reveals.forEach(el => observer.observe(el));
+
+        // Nav scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+</body>
+</html>
